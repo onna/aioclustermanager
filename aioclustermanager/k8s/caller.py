@@ -403,7 +403,7 @@ class K8SCaller(object):
             selector = 'labelSelector={}'.format(
                 ','.join(f'{k}={v}' for k, v in labels.items())
             )
-        url = GET_OPS['namespace']
+        url = GET_OPS['configmaps']
         url = url.format(
             namespace=namespace,
             endpoint=self.endpoint,
