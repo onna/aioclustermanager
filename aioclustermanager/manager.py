@@ -101,7 +101,8 @@ class ClusterManager:
                 namespace, job_id, execution_id):
             yield log_line
 
-    async def delete_execution(self, namespace, job_id, execution_id, purge=True):
+    async def delete_execution(self, namespace, job_id,
+                               execution_id, purge=True):
         return await self.caller.delete_execution(
             namespace, job_id, execution_id, purge)
 
