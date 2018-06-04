@@ -8,8 +8,10 @@ K8S_DELETE = {
 
 class K8SDelete(object):
 
-    def __init__(self):
+    def __init__(self, purge=True):
         self._raw = K8S_DELETE
+        if purge:
+        	self._raw['propagationPolicy'] = 'Foreground'
 
     def payload(self):
         return deepcopy(self._raw)
